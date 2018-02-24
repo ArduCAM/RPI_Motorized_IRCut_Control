@@ -9,8 +9,16 @@ This python library is used to control the camera LED (and IR filter) on Raspber
 # Prerequisites
 You have to disable the automatic management of camera led in `/boot/config.txt`.  
 ```bash
-$ sudo echo "disable_camera_led=1" >> /boot/config.txt
-$ reboot
+$ sudo echo "disable_camera_led=1" >> /boot/config.txt 
+$ sudo reboot
+```
+If permission denied
+you can do 
+
+```bash
+$ sudo nano /boot/config.txt
+add "disable_camera_led=1" at the file end 
+$ sudo reboot
 ```
 # Installation
 ```bash
