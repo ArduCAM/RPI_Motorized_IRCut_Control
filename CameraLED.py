@@ -1,6 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+
 import os, fcntl, struct
+
 # RaspberryPi 3 camera LED controller by BigNerd95
+
 class CameraLED():
 
     IOCTL_MAILBOX = 0xC0046400
@@ -23,8 +26,9 @@ class CameraLED():
                 state,              # tag data: state
                 0
             )
+
         # send request
-        result = fcntl.ioctl(self.__vcio, self.IOCTL_MAILBOX, buffer, True)
+        result = fcntl.ioctl(self.__vcio, self.IOCTL_MAILBOX, buffer)
 
         _, success, _, _, _, _, newState, _ = struct.unpack("=8I", result)
 
@@ -52,18 +56,19 @@ if __name__ == "__main__":
     import sys
 
     def usage():
-        print("Usage:", sys.argv[0], "(state|toggle|on|off)")
+        print("Usage: " + sys.argv[0] + " (state|toggle|on|off)")
     
     if len(sys.argv) == 2:
         led = CameraLED()
+
         if sys.argv[1] == "state":
-            print("State:", led.state())
+            print("State: " + str(led.state()))
         elif sys.argv[1] == "toggle":
-            print("State:", led.toggle())
+            print("State: " + str(led.toggle()))
         elif sys.argv[1] == "on":
-            print("State:", led.on())
+            print("State: " + str(led.on()))
         elif sys.argv[1] == "off":
-            print("State:", led.off())
+            print("State: " + str(led.off()))
         else:
             usage()
     else:
