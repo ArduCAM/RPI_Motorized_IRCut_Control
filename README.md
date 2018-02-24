@@ -17,7 +17,9 @@ you can do
 
 ```bash
 $ sudo nano /boot/config.txt
-add "disable_camera_led=1" at the file end 
+```
+add "disable_camera_led=1" at the file end. Then save the file and reboot .
+```bash
 $ sudo reboot
 ```
 # Installation
