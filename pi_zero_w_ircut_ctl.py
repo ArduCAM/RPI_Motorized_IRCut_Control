@@ -6,13 +6,13 @@ import os, fcntl, struct
 
 class CameraLED():
     def on(self):
-	cmd="echo 1 > /sys/class/gpio/gpio40/value"
-	os.system(cmd)
+        cmd="echo 1 > /sys/class/gpio/gpio40/value"
+        os.system(cmd)
         return "on" #self.__firmware_request__(self.SET_TAG, 1)
 
     def off(self):
-	cmd="echo 0 > /sys/class/gpio/gpio40/value"
-	os.system(cmd)
+        cmd="echo 0 > /sys/class/gpio/gpio40/value"
+        os.system(cmd)
         return "off" #self.__firmware_request__(self.SET_TAG, 0)
 
    # def state(self):
