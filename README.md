@@ -43,11 +43,11 @@ State: 0
 ```
 ### For Pi4 with UC350 Rev.B  
 ```bash
-$ sudo ./IMX219_UC-350_Rev.B_pi4_gpio_ircut_ctl on    
+$ sudo ./RPI_Camera_PI4_Ircut_ctl.py on    
 State: 1
 ```
 ```bash
-$ sudo ./IMX219_UC-350_Rev.B_pi4_gpio_ircut_ctl off
+$ sudo ./RPI_Camera_PI4_Ircut_ctl.py off
 State: 0
 ```
 ![IMAGE ALT TEXT](doc/uc350_rev.B.jpg)  
