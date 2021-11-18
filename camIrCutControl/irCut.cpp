@@ -64,6 +64,13 @@ static const rpi_hw_t rpi_hw_info[] = {
         .desc = "Model 3B",
         .pFunc = write_virtual_gpio,
     },
+     // Model 3A+
+    {
+        .hwver  = 0x9020e0,
+        .cameraLedPin = 134,
+        .desc = "Model 3B",
+        .pFunc = write_virtual_gpio,
+    },
 };
 const rpi_hw_t *rpi_hw_detect(void)
 {
