@@ -6,12 +6,12 @@ import os, fcntl, struct
 
 class CameraLED():
     def on(self):
-        cmd="gpio -g write 4 1"
+        cmd="raspi-gpio set 4 dh"
         os.system(cmd)
         return "on" #self.__firmware_request__(self.SET_TAG, 1)
 
     def off(self):
-        cmd="gpio -g write 4 0"
+        cmd="gpio -g write 4 dl"
         os.system(cmd)
         return "off" #self.__firmware_request__(self.SET_TAG, 0)
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     def usage():
         print("Usage: " + sys.argv[0] + " (on|off)")
-    cmd="gpio -g mode 4 out"
+    cmd="raspi-gpio set 4 op"
     os.system(cmd)
     if len(sys.argv) == 2:
         led = CameraLED()

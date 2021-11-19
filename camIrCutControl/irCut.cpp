@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <stdio.h>
-#include <wiringPi.h>
 #include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
@@ -127,11 +126,18 @@ done:
 }
 
 int write_real_gpio(int gpio,int value){
-char buffer[1024] = {0};
-sprintf(buffer,"gpio -g write %d %d",gpio, value);
-printf("%s\n",buffer);
-system(buffer);
-return 0;
+    char Command[100] = {0};
+    if(value == 1)
+    {
+        sprintf(Command,"raspi-gpio set %d op dh",gpio);
+    }
+    else
+    {
+        sprintf(Command,"raspi-gpio set %d op dl",gpio);
+    }
+    printf("%s\r\n",Command);
+    system(Command);
+    return 0;
 }
 int write_virtual_gpio(int gpio,int value){
     int fd;
