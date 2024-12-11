@@ -1,6 +1,6 @@
 Target		= irCut
 CXX         = g++
-LIBS		= -lwiringPi
+LIBS		= -lgpiod
 ODIR		= obj
 SRC			=$(wildcard *.cpp)
 DIR			=$(notdir $(SRC))

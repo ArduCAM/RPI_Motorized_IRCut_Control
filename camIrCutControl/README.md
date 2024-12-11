@@ -1,12 +1,23 @@
 - This demo is used to control the ir cut 
-```bash
+## Install dependence lib
+- Install libgpiod
+```shell
+sudo apt-get install libgpiod-dev
+```
+## How to build
+```shell
 make
 ```
+## Execute
 - Turn on the ir cut 
-```bash
+```shell
 ./irCut 1
 ```
 - Turn off the ir cut
-```bash
+```shell
 ./irCut 0
+```
+## Clean
+```shell
+make clean
 ```
